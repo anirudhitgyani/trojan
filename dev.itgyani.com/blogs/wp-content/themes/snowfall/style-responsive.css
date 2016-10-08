@@ -1,0 +1,99 @@
+/* SnowFall Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1279px) {
+	 body { min-width: 1000px; }
+	.main-slider .slides li, .main-slider .flex_caption2  {height:400px;}
+	.main-slider .flex_caption1 {font-size:30px;}
+	.main-slider .flex_caption2 {height:400px;}
+	#grid-staff { max-width: 1000px;}
+	.view-staff { margin: 10px .85%; } 
+	#snowfall-main-menu a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	.snowfall-top-menu input#s:focus { width: 100px; }
+	.flexslider.main-slider { padding-top: 0px; background: rgba(0,0,0,.55); }
+}
+
+@media screen and (max-width: 1023px) {
+	body { min-width: 775px; }
+	.main-slider .slides li {height:300px;}
+	.main-slider .flex_caption1 {font-size:25px;}
+	.main-slider .slide_btn { font-size: 15px; }
+	.main-slider .flex-control-nav li a { width: 13px; height: 13px; }
+	.flexslider.main-slider .flex-direction-nav li a:before { font-size: 18px; }
+	.main-slider .flex_caption2 {height:300px; width: 40%;}
+	#grid-staff { max-width: 775px;}
+	.view-staff { margin: 10px 4.5%; }
+	#snowfall-main-menu { max-width: 100%; display: block; position: relative; max-width: 100%; text-align: center; right:auto; }
+	#snowfall-main-menu ul { display: inline-block; }
+	img.site-logo, .site-title { float: none; display: block; margin: 0 auto 5px; width: 40%; } 
+	#snowfall-main-menu a { font-size: 13px; font-weight: 100; padding: 5px 10px; }
+	#snowfall-main-menu ul ul ul { left: 15px; top: 20px; }
+	.snowfall-top-menu-container input#s:focus { width: 85px; }
+	#video-box-item { height: 550px; }
+	.featured-box, .bqpcontainer .featured-box { width: 42%; }
+	.grid-portfolio li { width: 49%; }
+	.bqpcontainer .fpthumb { max-height: 30vw; }
+	
+}
+
+@media screen and (max-width: 801px) {
+	body { min-width: 575px; }
+	#header { position: relative; }
+	.headerheight { display: none; }
+	#grid-staff { max-width: 575px;}
+	.view-staff { margin: 10px 20%; } 
+	.grid-portfolio li { max-width: 400px; }
+	.bqpcontainer .tesheading .read-more { position: relative; }
+	#content { width: 100%; }
+	#right-sidebar, #footer-sidebar { width: 100%; float: none; text-align: center; }
+	#right-sidebar .widget, #footer-sidebar .first-footer-widget, #footer-sidebar .footer-widgets { float: none; width: 40%; margin: 3%; vertical-align: text-top; text-align: left; display: inline-block; min-width: 250px; }
+	.post-container .fpthumb { max-height: 40vw; }
+	.slide-links .slide_btn { font-size: 15px; padding:5px 10px; }
+	.slide-links .fill-color { padding:6px 11px; }
+	.flexslider.main-slider .flex-control-nav { bottom: 10px; }
+	.slide-links { bottom: 10px; }
+	#header-content { padding: 0 1%; }
+	.title1 { font-size: 7.27vw; }
+	.title2 { font-size: 5.39vw; }
+	.title3 { font-size: 3.56vw; }
+}
+
+
+@media screen and (max-width: 599px) {
+	body { min-width: 300px; }
+	img.site-logo, .site-title { width: 70%; }
+	.main-slider .flex_caption2, .social, .menu-top-menu-container { display: none; }
+	.view-staff { margin: 20px 0; } 
+	#video-box-item { display: none; }
+	.statitem { width: 100%; }
+	#snowfall-main-menu.gobottom { position: relative; right:auto; }
+	.featured-box, .bqpcontainer .featured-box { width: 100%; }
+	.grid-portfolio li { width: 100%; }
+	#filter-gallery a { line-height: 25px; margin: 3px 8px; padding: 0 9px; }
+	.bqpcontainer .tesheading .read-more { position: relative; right: 0; }
+	.floatleft, .floatright { width: 100%; }
+	.bqpcontainer .fpthumb { max-height: 50vw; }
+	.mobile-menu { display: block; }
+	#snowfall-main-menu { display: none; }
+	#snowfall-main-menu a { margin: 1px auto; border-bottom: 1px solid #EEEEEE; padding: 10px; background: rgba(0,0,0,.5); width: 100%;  }
+	#snowfall-main-menu ul { margin: 0 auto; }
+	#snowfall-main-menu li { float: none; width: 220px; margin: 0 auto; }
+	#snowfall-main-menu ul ul a { margin: 0 auto; width: 100%; }
+	.title1 { font-size: 9.27vw; }
+	.title2 { font-size: 7.39vw; }
+	.title3 { font-size: 5.56vw; }
+
+	
+}
+
+@media screen and (max-width: 499px) {
+	.poftfolioslider .flex-viewport { height: 250px; }
+	.main-slider .flex_caption1 {font-size:15px;}
+	.main-slider .slides li {height:250px;}
+	.connumber { display: none; }
+	.view-staff { border-width: 2px; } 
+	.view-staff-name { margin: -25px 0 0 0; width: 80%;}
+}

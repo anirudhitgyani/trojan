@@ -1,0 +1,325 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Innovation Lite\n"
+"POT-Creation-Date: 2016-04-26 06:03+0600\n"
+"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:12 functions.php:151
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:12 functions.php:151
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:12
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:26
+msgid "Comments are Closed"
+msgstr ""
+
+#: functions.php:19 header.php:45
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:19
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:120
+msgid "Theme by:"
+msgstr ""
+
+#: functions.php:120
+msgid "Powered by:"
+msgstr ""
+
+#: functions.php:135 functions.php:140
+msgid "Read More"
+msgstr ""
+
+#: functions.php:151
+msgid "Edit"
+msgstr ""
+
+#: functions.php:151
+msgid "Comments"
+msgstr ""
+
+#: functions.php:161
+msgid "NEWER ENTRIES"
+msgstr ""
+
+#: functions.php:161
+msgid "OLDER ENTRIES"
+msgstr ""
+
+#: functions.php:170
+msgid "SORRY, NOT FOUND ANYTHING"
+msgstr ""
+
+#: functions.php:171
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: functions.php:173
+msgid "&laquo; Or Return to the Home Page"
+msgstr ""
+
+#: functions.php:183
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:192
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: functions.php:201
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:210
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:219
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:229
+msgid "Footer Area Four"
+msgstr ""
+
+#: inc/customize.php:9
+msgid "SNOWFALL OPTIONS"
+msgstr ""
+
+#: inc/customize.php:10
+msgid ""
+"SnowFall is CSS3 Powered and WordPress Latest Version Ready Responsive "
+"Theme. You can Learn More about the Features from the"
+msgstr ""
+
+#: inc/customize.php:10
+msgid "Theme Page"
+msgstr ""
+
+#: inc/customize.php:25
+msgid "Social Link - "
+msgstr ""
+
+#: inc/customize.php:28
+msgid ""
+"Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</"
+"b>. Supported Links are: wordpress.org, wordpress.com, dribbble.com, github."
+"com, tumblr.com, youtube.com, flickr.com, vimeo.com, codepen.io, linkedin.com"
+msgstr ""
+
+#: inc/customize.php:44
+msgid "Slide Title 01"
+msgstr ""
+
+#: inc/customize.php:58
+msgid "Slide Title 02"
+msgstr ""
+
+#: inc/customize.php:72
+msgid "Slide Title 03"
+msgstr ""
+
+#: inc/customize.php:86
+msgid "Special Text 01"
+msgstr ""
+
+#: inc/customize.php:100
+msgid "Special Text 02"
+msgstr ""
+
+#: inc/theme-about.php:11
+msgid "About"
+msgstr ""
+
+#: inc/theme-about.php:15
+msgid "IMPORTANT NOTE !"
+msgstr ""
+
+#: inc/theme-about.php:15
+msgid ""
+"As per the Requirements of New Theme Review Guidelines, Theme Options will "
+"not be available at this location anymore for the Free Version of SnowFall "
+"Theme. You can get all those options under <b>Appearance > Customize</b>"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid ""
+"If you love the Excellent Previous Style Options You may consider using our"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid "Extend Version Themes"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid ""
+"All Options will be under <b>Appearance > SnowFall Options</b> with large "
+"screen and user friendtly Interface in Extended Version"
+msgstr ""
+
+#: inc/theme-about.php:20
+msgid ""
+"A Theme is an effort of many sleepless nights of the Developers.  If you "
+"like this FREEE Theme You can consider for a 5 star rating and honest "
+"review. Your review will inspire us. You can"
+msgstr ""
+
+#: inc/theme-about.php:20
+msgid "Review Here"
+msgstr ""
+
+#: inc/theme-about.php:20
+msgid ""
+"Need More Features and Options including Multi Layer Slides, Unlimited Slide "
+"Items, Links from Featured Boxes, Portfolio and 100+ Advanced Features and "
+"Controls? Try"
+msgstr ""
+
+#: inc/theme-about.php:20
+msgid "You can Visit the Full Featured"
+msgstr ""
+
+#: inc/theme-about.php:20
+msgid "DEMO HERE"
+msgstr ""
+
+#: inc/theme-about.php:23
+msgid ""
+"SnowFall is CSS3 Powered and WordPress Latest Version Ready Responsive "
+"Theme.  SnowFall Extend has Multi Layered Slider, Portfolio and Animated "
+"Staff Box Items.  Super Elegant and Professional SnowFall Theme will be "
+"adjusted automatically with all smart devices if the Responsive Layout be "
+"selected.  Full Wide Template can be used for showing showcase or other "
+"pages. Featured Boxes, Portfolio and Staff Boxes can represent your company "
+"to the world"
+msgstr ""
+
+#: inc/theme-about.php:27
+msgid "SnowFall Theme Page"
+msgstr ""
+
+#: inc/theme-about.php:28
+msgid "SnowFall Demo"
+msgstr ""
+
+#: inc/theme-about.php:29
+msgid "D5 Theme Gallery"
+msgstr ""
+
+#: inc/theme-about.php:33
+msgid "Learn More about our Flexible Membership Options"
+msgstr ""
+
+#: inc/theme-about.php:34
+msgid "View Pricing and Features"
+msgstr ""
+
+#: inc/theme-about.php:37 inc/theme-about.php:48
+msgid "D5 Creation Themes"
+msgstr ""
+
+#: inc/theme-about.php:41
+msgid "World Class, Responsive and Premium WordPress Themes"
+msgstr ""
+
+#: inc/theme-about.php:42
+msgid ""
+"Ready to take your WordPress site to the next level? Give your CMS a "
+"beautiful design to draw in more visitors. Peoples love us because of the "
+"Simplicity of our Themes. We deliver User Friendly Responsive and Premium "
+"WordPress Themes with Unique and Modern Design. You can Trust our Themes"
+msgstr ""
+
+#: inc/theme-about.php:44
+msgid "Visit Our Theme Gallery"
+msgstr ""
+
+#: inc/theme-about.php:45
+msgid "Visit Theme Demos"
+msgstr ""
+
+#: inc/theme-about.php:46
+msgid "Become a Happy Member"
+msgstr ""
+
+#: search.php:12
+msgid "SEARCH RESULTS"
+msgstr ""
+
+#: search.php:17
+msgid "Search Term:"
+msgstr ""
+
+#: search.php:18
+msgid "Number of Results:"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "SnowFall"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://d5creation.com/themes/snowfall/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SnowFall is CSS3 Powered and WordPress Latest Version Ready Responsive Theme "
+"for Business.  Super Elegant and Professional SnowFall Theme will be "
+"adjusted automatically with all smart devices if the Responsive Layout be "
+"selected.  Full Wide Template can be used for showing showcase or other "
+"pages. Featured Boxes, Portfolio and Staff Boxes can represent your company "
+"to the world. You can Visit the SnowFall Demo at demo.d5creation.com/themes/?"
+"theme=SnowFall and SnowFall descriptions at http://d5creation.com/theme/"
+"snowfall"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://d5creation.com/"
+msgstr ""

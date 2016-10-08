@@ -1,0 +1,541 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0% 3% 0% 3%;
+    padding:0% 0% 0% 0%;
+    border-right-style:solid;
+    border-right-width:1px;
+    border-right-color: #f2f2f2;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:#f2f2f2;
+    background-color:#ededed;
+    overflow-y:initial;   
+    overflow-y:scroll;
+}
+.navbar {
+        background-color:lightgoldenrodyellow;
+        background-image: none;
+    }
+/*Media Settings*/
+/* responsive text queries */
+@media screen and (max-width: 992px) {
+  p,.btn,input,div,span,h4,a {
+    font-size: 95%;
+  }
+  h1 {
+    font-size: 24px;  
+  }
+  h2 {
+    font-size: 22px;  
+  }
+  h3 {
+    font-size: 18px;  
+  }
+    
+
+}
+
+@media screen and (max-width: 768px) {
+  p,.btn,input,div,span,h4,a {
+    font-size: 90%;
+  }
+  h1 {
+    font-size: 20px;  
+  }
+  h2 {
+    font-size: 18px;  
+  }
+  h3 {
+    font-size: 16px;  
+  }
+  
+}
+
+/*Default Settings For Container Class in Bootstrap*/
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: .5%;
+    margin-left: .05%;
+    min-width:100%;
+    min-height:100%;
+    background-color:white;
+    /* margin-left: auto; */
+}
+/*Default Settings For Row Class in Bootstrap*/
+.row {
+    clear:both;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: .5%;
+    margin-left: .1%;
+}
+/*Default Settings For Badge Class in Bootstrap*/
+.badge {
+          font-size:small;
+          font-synthesis:weight;
+          font-style:normal;
+          font-weight:normal;
+          background-color:transparent;
+          color:black;
+          margin-bottom:1px;
+          border-bottom-style:solid;
+          border-bottom-width:2px;
+          border-bottom-color:chocolate;
+          min-width:100%;
+          text-align:left;
+          text-decoration-style:double;
+          background-repeat:no-repeat;
+          background-position:right;
+         /*background-image:url('../images/DropDownLoad.gif')*/ 
+        }
+/*Default Sub Settings For Form-group Class in Bootstrap*/
+.form-group-row {
+    margin:-1% 0% 0% 0%;
+}
+/*Default Select Element*/
+select {
+    
+}
+.form-control, textarea, select {
+    border-radius:0px 0px 0px 0px;
+    margin:.7% 0% 0% 0%;
+    min-width:100%;
+}
+
+/*Wait Dialog CSS*/
+#BrizBVKStandardDivDialog {
+    width:90%;
+    background-color:transparent;
+    padding-top:10px;
+
+}
+#BrizBVKStandardDivContent {
+    height:300px;
+    top:50px;
+    position: relative;
+    background-color: lightyellow;
+    /* -webkit-background-clip: padding-box; */
+    /* background-clip: padding-box; */
+    border: 1px solid #999;
+    /* border: 1px solid rgba(0,0,0,.2); */
+    /* border-radius: 6px; */
+    /* outline: 0; */
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 0px 0px rgba(0,0,0,.5);
+    border-radius:0px;
+    border-style:double;
+    border-width:5px;
+    border-color:mediumblue;
+    padding: 10px;
+    border: 1px solid #77aaff;
+    box-shadow:  -1px 1px #77aaff,
+         -2px 2px #77aaff,
+         -3px 3px #77aaff,
+         -4px 4px #77aaff,
+         -5px 5px #77aaff;
+}
+ #BrizBVKStandardDivWaitTextColumn {
+     text-align: left;
+}
+#BrizBVKStandardDivHeader {
+    min-height: 16.43px;
+    padding: 15px;
+    border-bottom: 0px solid #e5e5e5;
+}
+#BrizBVKStandardImgWait {
+    height:50px;
+    width:50px;
+}
+#BrizBVKStandardDivBody {
+    padding-left:20%;
+    height:100%;
+}
+#BrizBVKStandardBtnGidText {
+    font-size:medium;
+    font-family:serif;
+    color:#D4658B;
+    border-bottom-style:double;
+    border-bottom-width:4px;
+}
+.BrizBVKStandardCSSInstruction{
+    margin-right:20%;
+}
+#BrizBVKStandardServerWaitUntil {
+    margin-top:2%;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color:red;
+    font-style:oblique;
+    font-weight:bold;
+    font-size:medium;
+    border-bottom-style:double;
+    border-bottom-width:5px;
+    border-bottom-color:yellow;
+}
+#BrizBVKStandardServerWaitUntilImg {
+    font-size:1.3em;
+}
+#BrizBVKStandardRight {
+    bottom:0px;
+    display:block;
+    right:0px;
+    margin-left:69.8%;
+    margin-top:3.5%;
+}
+/* Bedcrumb */
+/** The Magic **/
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/** The Spacing **/
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+}
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 10px solid #fff;
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 10px solid #ccc;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #ebebeb;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 10px solid #adadad;
+}
+
+/** Primary button **/
+.btn-breadcrumb .btn.btn-primary:not(:last-child):after {
+  border-left: 10px solid #428bca;
+}
+.btn-breadcrumb .btn.btn-primary:not(:last-child):before {
+  border-left: 10px solid #357ebd;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):after {
+  border-left: 10px solid #3276b1;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):before {
+  border-left: 10px solid #285e8e;
+}
+
+/** Success button **/
+.btn-breadcrumb .btn.btn-success:not(:last-child):after {
+  border-left: 10px solid #5cb85c;
+}
+.btn-breadcrumb .btn.btn-success:not(:last-child):before {
+  border-left: 10px solid #4cae4c;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):after {
+  border-left: 10px solid #47a447;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):before {
+  border-left: 10px solid #398439;
+}
+
+/** Danger button **/
+.btn-breadcrumb .btn.btn-danger:not(:last-child):after {
+  border-left: 10px solid #d9534f;
+}
+.btn-breadcrumb .btn.btn-danger:not(:last-child):before {
+  border-left: 10px solid #d43f3a;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):after {
+  border-left: 10px solid #d2322d;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):before {
+  border-left: 10px solid #ac2925;
+}
+
+/** Warning button **/
+.btn-breadcrumb .btn.btn-warning:not(:last-child):after {
+  border-left: 10px solid #f0ad4e;
+}
+.btn-breadcrumb .btn.btn-warning:not(:last-child):before {
+  border-left: 10px solid #eea236;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):after {
+  border-left: 10px solid #ed9c28;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):before {
+  border-left: 10px solid #d58512;
+}
+
+/** Info button **/
+.btn-breadcrumb .btn.btn-info:not(:last-child):after {
+  border-left: 10px solid #5bc0de;
+}
+.btn-breadcrumb .btn.btn-info:not(:last-child):before {
+  border-left: 10px solid #46b8da;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):after {
+  border-left: 10px solid #39b3d7;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):before {
+  border-left: 10px solid #269abc;
+}
+
+/*Add Button Functionality*/
+.BrizBButtonFunctionality {
+    box-shadow: 0 3px 0 0 #b87430;
+    background: #eb8f34;
+    color: #ffffff;
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+/*Blok UI functionality div*/
+#BrizBDivStandardBlockUI {
+    border-style: solid; 
+    border-color: blueviolet; 
+    border-width: 2px; 
+    background-color: lightyellow; 
+    text-align: center; 
+    padding: 15px 0px 0px -300px; 
+    font-family: Verdana, Geneva, sans-serif; 
+    font-weight: bold;
+    width:100%;
+    border-right-width:20px;
+    border-right-color:green;
+    border-left-color:green;
+    border-left-width:20px;
+}
+/*Data Grid Settings*/
+.ui-widget-header {
+    border: 1px solid #aaaaaa;
+    background: #e5e5e5;
+    color: #222222;
+    font-weight: bold;
+    min-width: 100%;
+    margin:0px;
+    padding:0px;
+}
+.dataTables_length {
+    width:100%;
+}
+.form-control, textarea, select {
+    border-radius: 0px 0px 0px 0px;
+    margin: .7% 0% 0% 0%;
+    /* min-width: 100%; */
+}
+.BrizBDataGridSelectRowsDropDown {
+    max-width:70px;
+    min-width:70px;
+    margin-left:5px;
+    margin-right:5px;
+    color:white;
+}
+.BrizBDataGridSelectRowsLabel {
+    margin:0px;
+    font-weight:lighter;
+    font-size:small;
+    color:green;
+    text-justify:trim;
+}
+table.dataTable thead td {
+     padding: 0px; 
+}
+#BrizBBtnStandardImport {
+    margin-left:5px;
+}
+#BrizBVKStandardDivDataGridFeatures {
+    padding:0px;
+}
+
+
+.dataTables_wrapper .ui-toolbar {
+    padding: 0px;
+    border:0px; 
+    padding-top:4px;
+    padding-right:4px;
+    padding-bottom:2px;
+    background-color:#EAD5D5;   
+    font-weight:normal;
+    font-family:'Arial Rounded MT'; 
+    padding-left:25px;
+    border-radius:0px;
+}
+.sorting ui-state-default {
+    padding:0px;
+}
+/*Table Header*/
+table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
+    padding: 4px 10px;
+    color: maroon;
+    margin: 0px;
+    padding: 0px;
+    border-style: solid;
+    border-width: initial;
+    font-weight:bold;
+    font-family:'Bookman Old Style';
+    margin-left:10px;
+}
+table.dataTable thead th div.DataTables_sort_wrapper {
+    position: relative;
+    margin-left: 5px;
+}
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    /* padding-top: 0.755em; */
+    margin: 0px;
+    color:#D4658B;
+    border-bottom-style:double;
+    border-bottom-width:4px;
+    text-emphasis-style:circle;
+    text-decoration:overline;
+    text-shadow:2px 2px 2px yellow;
+    text-justify:distribute;
+    color:blue;
+    font-style:italic;
+    font-stretch:expanded;
+    font-variant-caps:all-small-caps;
+    font-synthesis:weight;
+    text-decoration-style:wavy;
+    font-weight:normal;
+}
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding: 0.50em;
+    background-color: transparent;    
+    min-width: 70%;
+    border:3px ridge #77aaff;
+    -webkit-box-shadow: 0 0 5px rgb(0,0,0);
+    -moz-box-shadow: 0 0 5px rgb(0,0,0);
+    background-color:aliceblue;
+}
+
+/*Pagination First Child*/
+.dataTables_wrapper .dataTables_paginate .fg-button:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-left: 20px;
+}
+/*Pagination Last Child*/
+.dataTables_wrapper .dataTables_paginate .fg-button:last-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-left: 20px;
+}
+/*Pagination Middle Button*/
+.dataTables_wrapper .dataTables_paginate .fg-button {
+    box-sizing: border-box;
+    display: inline-block;
+    /* min-width: 1.5em; */
+    padding: 0.3em;
+    margin-left: 15px;
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid chocolate;
+    border-radius: 5px;
+    font-family:Copperplate;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1;
+    color: coral !important;
+    /* Safari */
+-webkit-transform: rotate(-10deg);
+
+/* Firefox */
+-moz-transform: rotate(-10deg);
+
+/* IE */
+-ms-transform: rotate(-10deg);
+
+/* Opera */
+-o-transform: rotate(-10deg);
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+    background-image: none;
+    color: coral !important;
+    border: 1px solid chocolate;
+}
+/*Search Button*/
+#ObjBtnDataGridSearch {
+    background-color:gainsboro;
+    font-size:1em;
+    color:red;
+    min-width:80%;
+    max-width:40%;
+    margin-left:2%;
+}
+.img-thumbnail{background-color:transparent;}
+/*Data Entry Modal Coding*/
+#BrizBDivCloseDialog {
+    background-color:lightyellow;
+    padding:.5% 0% .5% 0%;
+}
+#BrizBDivCloseDialogDivider {
+    margin:.2% 0% .2% 0%;    
+}
+#BrizBDivCloseDialogFooter , #BrizBDivCloseDialogDataFooter {
+    margin:.5% 0% .2% 0%; 
+    padding:.5% 0% .2% 0%; 
+    border-top-style:solid;
+    border-top-width:2px;
+    border-top-color:lightgoldenrodyellow;
+    width:100%;   
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ddd;
+    margin: 0px;
+    padding: 0px;
+}

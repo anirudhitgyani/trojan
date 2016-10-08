@@ -1,0 +1,35 @@
+<?php
+include_once('../config/ITGStandardPHPPageDBConfig.php'); 
+include_once('../config/ez_sql_core.php'); 
+include_once('../config/ez_sql_mysql.php'); 
+include_once('../config/Cipher.php');
+
+//echo $cipher->encrypt('ITGyani', $key);
+//$iv = $cipher->getIV();
+//echo $cipher->decrypt($cipher->encrypt('ITGyani', $key), $key);
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+ if(isset($_GET['CallID']))
+ {
+    if($_GET['CallID']=='SignIn')
+    {    
+        $cipher = new Cipher(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
+        $ITGObjStandardDB = new ezSQL_mysql(dbuser,dbpassword,mdb,mdbserver);
+        $password = sha1($_GET['XXX02']);
+        $user = $ITGObjStandardDB->get_row("CALL ManageAdminSignIn( '" . $_GET['XXX01'] . "' , '" . $password . "');");
+        $results = array();
+        $results[] = array(
+              'ResultID' => $user->ResultID,
+              'TransMessage' => $user->TransMessage,
+              'TransMessageId' => $user->TransMessageId,
+              'TransControl' => $user->TransControl
+           );
+        $json = json_encode($results);
+        echo $json;
+
+    }
+ }

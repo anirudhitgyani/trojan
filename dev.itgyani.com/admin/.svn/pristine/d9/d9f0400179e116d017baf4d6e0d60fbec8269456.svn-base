@@ -1,0 +1,212 @@
+
+
+$(document).ready(function () {
+   try{
+       // Add Handlers
+        document.getElementById("ITGBtnAddNew").addEventListener("click", ITGAddNewCareerPath);
+        document.getElementById("ITGBtnSaveCareerPath").addEventListener("click", ITGValidateAndSaveCareerPath);
+        
+        document.getElementById("ITGBtnAddNew").click("slow");
+        
+       FillCareerPathList();
+       //alert('called');
+   }catch(err){alert(err.message)}
+});
+
+function ITGAddNewCareerPath()
+{
+    $("#IGDivDataEntry").toggle();
+}
+function ITGValidateAndSaveCareerPath()
+{
+    try{
+        
+    
+    if(document.getElementById('ITGTxtCareerPathName').value.trim().length < 5)
+    {
+        BrizBVKStandardProcBootboxRequired("Please, Enter Career Path.", document.getElementById('ITGTxtCareerPathName'), "Min. 5 Character's, Max. 50 Character's", "Please, Enter Career Path As Per IT Gyani Standard.", "----");
+    }
+    }catch(err){
+        alert(err.message)
+    }
+}
+// Code To Fill Treeview
+function FillCareerPathList()
+{
+    $.ajax({
+            //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+            url: "API/ITGStandardPHPPageCourse.php?CallID=GetFAQForGrid&XXX01=" +
+                    encodeURIComponent( '1') 
+                    ,
+            success: function (data) {
+                
+                var TblFAQ = $('#BrizBTblCareerPathDataGrid').DataTable();
+                TblFAQ.destroy();
+                //$('#ITGTrvCourse').jstree(true).get_selected()
+                $("#BrizBTblCareerPathDataGrid > tbody").empty();
+                //alert(data);
+                $.each($.parseJSON(data), function (key, TabValue) {    
+                                //alert(TabValue.SrNo.toString());
+                                $FAQRow = '<td  >' + TabValue.SrNo.toString().replace('null','') + '</td>';
+                                $FAQRow += '<td >' + TabValue.FAQ.toString().replace('null','')  + '</td>';
+                                $FAQRow += '<td >' + TabValue.FAQAnswer.toString().replace('null','')  + '</td>';
+                                
+                                //alert($TopicRow);
+                                $FAQRow += '<td >' + TabValue.IsActive.toString().replace('null','')  + '</td>';
+                                $FAQRow += '<td >' + TabValue.IsDeleted.toString().replace('null','')  + '</td>';
+                                $FAQRow += '<td >' + TabValue.ChangeLog.toString().replace('null','')  + '</td>';
+                                $('#BrizBTblCareerPathDataGrid').append('<tr >' + $FAQRow + '</tr>');                                                                                               
+                        });
+                        
+                $('#BrizBTblCareerPathDataGrid').DataTable({    
+            
+                        scrollY: '50vh',
+                        sScrollX: "100%",
+                        sScrollXInner: "110%",
+                        bScrollCollapse: true,
+                        autoWidth:false  
+                });
+                
+            //TblTopic.columns.adjust().draw( false );
+                try {
+                        var BrizBObjSelect;
+                        for (BrizBCtrGridSearch = 0 ; BrizBCtrGridSearch < document.getElementsByTagName('select').length ; BrizBCtrGridSearch++) {
+                            if (document.getElementsByTagName('select')[BrizBCtrGridSearch].innerHTML == '<option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option>') {
+                                BrizBObjSelect = document.getElementsByTagName('select')[BrizBCtrGridSearch];
+                            }
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblCareerPathDataGrid_length')[0] ; 
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblTopicDataGrid_length')[0] ; 
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblTopicDataGrid_length')[1] ; 
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblTopicDataGrid_length')[2] ; 
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblTopicDataGrid_length')[3] ; 
+                        }
+                        if(!BrizBObjSelect)
+                        {
+                           BrizBObjSelect = document.getElementsByName('BrizBTblTopicDataGrid_length')[4] ; 
+                        }
+                        
+                        // Search Button
+                        var BrizBObjSearch = document.getElementById('BrizBTblCareerPathDataGrid_filter');
+                        BrizBObjSearch = BrizBObjSearch.children[0].children[0];
+                        BrizBObjSearch.style="width:50%";
+
+                        var element = document.getElementById("BrizBTblCareerPathDataGrid_filter");
+                        element.parentNode.removeChild(element);
+
+                        BrizBObjSearch.className = "img-rounded";
+                        BrizBObjSearch.id = "ObjBtnDataGridSearchFAQ";
+                        BrizBObjSearch.placeholder = "Type Search ...";
+                        BrizBObjSearch.style.fontSize = "1em";
+                        
+                        // Add Search Button
+                        // Add Div
+                            
+                        var BrizBVKStandardAddSearchImage = document.createElement('li');
+                        BrizBVKStandardAddSearchImage.id = 'BrizBVKStandardBtnSearchImageFAQ';
+                        BrizBVKStandardAddSearchImage.className = "fa fa-search fa-lg";
+                        BrizBVKStandardAddSearchImage.style="color:yellow;text-shadow: 1px 1px 3px red;";
+                        
+                        BrizBObjSelect.display = "inline-block";
+                        BrizBObjSelect.margin = "10px";
+                        BrizBObjSelect.setAttribute("class", "btn-primary BrizBDataGridSelectRowsDropDown");
+
+                        var BrizBVKStandardSelectText = document.createElement('label');
+                        BrizBVKStandardSelectText.id = 'BrizBVKStandardBtnGidTextFAQ';
+                        BrizBVKStandardSelectText.innerHTML = "Select No Of Rows"
+                        BrizBVKStandardSelectText.setAttribute("class", "BrizBDataGridSelectRowsLabel");
+                        BrizBVKStandardSelectText.setAttribute("fontfamily", "seirf");
+                                                
+                        var BrizBVKStandardImportButton = document.createElement("button");
+                        BrizBVKStandardImportButton.id = 'BrizBBtnStandardImportFAQ';
+                        BrizBVKStandardImportButton.setAttribute("class", "btn btn-warning BrizBButtonFunctionality jdbpopup");
+                        BrizBVKStandardImportButton.style = "background-color:maroon;margin-right:10px;";
+                        BrizBVKStandardImportButton.setAttribute("type", "button");
+                        
+                        var BrizBVKStandardImportButtonLi = document.createElement("li");
+                        BrizBVKStandardImportButtonLi.id = 'BrizBBtnStandardAddLiFAQ';
+                        BrizBVKStandardImportButtonLi.setAttribute("class", "fa fa-file-excel-o 10px");
+                        BrizBVKStandardImportButtonLi.innerHTML = "Export";
+                        BrizBVKStandardImportButton.appendChild(BrizBVKStandardImportButtonLi);
+                        
+                        var BrizBHeader = document.createElement("div");
+                        BrizBHeader.appendChild(BrizBVKStandardImportButton);
+                        BrizBHeader.appendChild(BrizBVKStandardSelectText);
+                        BrizBHeader.appendChild(BrizBObjSelect);
+                        
+                        BrizBHeader.appendChild(BrizBVKStandardAddSearchImage);
+                        BrizBHeader.appendChild(BrizBObjSearch);
+                        document.getElementById('BrizBTblCareerPathDataGrid_length').innerHTML = "";
+                        document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBHeader);
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBVKStandardSelectText);
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBObjSelect);
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBVKStandardSelectImg);
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBObjSearch);
+                        
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBVKStandardTransaction);
+                        
+                        //document.getElementById('BrizBTblCareerPathDataGrid_length').appendChild(BrizBVKStandardAddSearchImage);
+                            //alert(document.getElementsByClassName('dataTables_length').parent);
+                        // 3. Add Button Event
+                        //document.getElementById("BrizBBtnCloseDialogSave").addEventListener("click", BrizBStandardGroupValidateAndSaveData);
+                         
+
+                        $("#BrizBBtnStandardAddLiFAQ").animatedModal({
+                            modalTarget: 'modal-02',
+                            animatedIn: 'lightSpeedIn',
+                            animatedOut: 'bounceOutDown',
+                            color: 'lightgray',
+                            // Callbacks
+                            beforeOpen: function () {
+                                try {
+                                    if (document.getElementById('BrizBLblGroupManagement').innerHTML) {
+                                        document.getElementById('BrizBLblGroupManagement').innerHTML = "System Group Management";
+                                        $('.icheckbox_flat-red').attr("class", "icheckbox_flat-red checked");
+                                        $('.icheckbox_flat-red').class = "icheckbox_flat-red checked";
+                                       // alert('called');
+                                    }
+                                        document.getElementById("BrizBStandardDivMenuContainer").remove();
+                                } catch (err) { alert(err.message); }
+                            },
+                            afterOpen: function () {
+                                //console.log("The animation is completed");
+                            },
+                            beforeClose: function () {
+                                //console.log("The animation was called");
+
+                            },
+                            afterClose: function () {
+                                //document.body.appendChild(BrizBVKStandardObjTransaction.BrizBVKStandardVarObjMenu);
+                                //document.body.insertBefore(BrizBVKStandardObjTransaction.BrizBVKStandardVarObjMenu, document.body.firstChild);
+                                //BrizBStandardDivBodyContainer
+                            }
+                        });
+                        $('#BrizBChkStandardActive').on('ifCreated ifClicked ifChanged ifChecked ifUnchecked ifDisabled ifEnabled ifDestroyed', function (event) {
+                            if (this.checked) {
+                                //alert('yes');
+                            }
+                        }).iCheck({
+                            checkboxClass: 'icheckbox_flat-red',
+                            radioClass: 'iradio_flat-red',
+                            increaseArea: '20%'
+                        });
+
+                    } catch (err) { alert(err.message) }
+            }
+        });    
+                    
+}

@@ -1,0 +1,10 @@
+﻿
+SELECT TP.TopicName , TP.TopicID , QS.QuestionSetID , QS.QuestionSetSrNo, QS.Question,
+  QS.Answer01 , CASE QS.IsAnswer01Ok WHEN 1 THEN 'Yes' ELSE 'No' End As IsAnswer01Ok, 
+  QS.Answer02 , CASE QS.IsAnswer02Ok WHEN 1 THEN 'Yes' ELSE 'No' End As IsAnswer02Ok, 
+  QS.Answer03 , CASE LENGTH(QS.Answer03) When 0 THEN '' ELSE  CASE QS.IsAnswer03Ok WHEN 1 THEN 'Yes' ELSE 'No' End End As IsAnswer03Ok, 
+  QS.Answer04 , CASE LENGTH(QS.Answer04) When 0 THEN '' ELSE  CASE QS.IsAnswer04Ok WHEN 1 THEN 'Yes' ELSE 'No' End End As IsAnswer04Ok, 
+  QS.AnswerTimeInSec, QS.ControlType ,QS.ChangeLog,
+  CASE QS.IsActive WHEN 1 THEN 'Yes' ELSE 'No' End As IsActive,
+  CASE QS.IsDeleted WHEN 1 THEN 'Yes' ELSE 'No' End As IsDeleted  
+  From questionset QS INNER JOIN topic TP ON TP.TopicID = QS.TopicID WHERE TP.CourseID = 2

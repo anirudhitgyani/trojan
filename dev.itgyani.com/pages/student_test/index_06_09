@@ -1,0 +1,246 @@
+<?php include('../../connection.php');
+include('../../header_stud.php'); 
+	
+    $TopicID = $_REQUEST['TopicID'];
+    $CourseID = $_REQUEST['CourseID'];
+        
+   $sql_test = mysql_query("select * from `QuestionSet` where TopicID = '".$TopicID."' " );
+   $TotalQuestion = mysql_num_rows($sql_test);
+   $PercentagePerQuestion = 100 / $TotalQuestion;
+   
+   
+   $prevquery= "SELECT * FROM `topic` WHERE TopicID > '".$TopicID."' AND CourseID = '".$CourseID."' ORDER BY TopicID ASC  LIMIT 1"; 
+$prevresult = mysql_query($prevquery) or die(mysql_error());
+$row_next_id = mysql_fetch_array($prevresult);
+	$NextTopicID = $row_next_id['TopicID'];
+
+?>
+<input type="hidden" name="NextTopicID" id="NextTopicID" value="<?php echo $NextTopicID; ?>" />
+<input type="text" name="CoverPercentage" id="CoverPercentage" value="0" />
+<input type="text" name="PercentagePerQuestion" id="PercentagePerQuestion" value="<?php echo number_format($PercentagePerQuestion,2); ?>" />
+<input type="text" name="QuestionNo" id="QuestionNo" value="1" />
+
+<div class="middle-content hr-dashbord-content">
+<div class="container">
+<div class="row-fluid dashbord-row">
+<div class="col-sm-3 col-xs-12 col-md-2 left-col">
+<div class="collapse navbar-collapse left-menu" id="bs-example-navbar-collapse-1">
+                                      <ul class="nav navbar-nav">
+<li><a href="<?php echo $RootPath; ?>pages/student/">Dashbord <img src="<?php echo $RootPath; ?>images/dashbord/dashbord-icon.png" /></a></li>
+      <li><a href="<?php echo $RootPath; ?>pages/student/profile.php">Profile <img src="<?php echo $RootPath; ?>images/dashbord/profile-icon.png" /></a></li>
+      <li><a href="#">Message<img src="<?php echo $RootPath; ?>images/dashbord/message-icon.png" /></a></li>
+      <li><a href="#">Activities <img src="<?php echo $RootPath; ?>images/dashbord/exam-icon.png" /></a></li>
+      <li><a href="#">Projects<img src="<?php echo $RootPath; ?>images/dashbord/project-icon.png" /></a></li>
+      <li><a href="#">Exams <img src="<?php echo $RootPath; ?>images/dashbord/exam-icon.png" /></a></li>
+            <li><a href="#">Settings<img src="<?php echo $RootPath; ?>images/dashbord/account-icon.png" /></a></li>
+                  
+                        <li><a href="<?php echo $RootPath; ?>pages/student/logout.php">Logout<img src="<?php echo $RootPath; ?>images/dashbord/logout-icon.png" /></a></li>                                      </ul>
+                                    </div>
+</div>
+<div class="col-sm-9 col-xs-12 col-md-10 no-padding-right right-col">
+<div class="student-profile-section grey-box">
+<div class="student-titles pull-left text-right"><small>Student Test</small></div><br/><br/>
+<h4 style="color:red;">Student should score up to 80% to move on next topic</h4>
+
+
+<?php if(isset($_SESSION['Success'])) { ?>
+<br/><br/>
+<div style="color:green;" class="student-titles">
+    <h5><?php echo $_SESSION['Success']; ?></h5>
+</div>
+<?php } unset($_SESSION['Success']); ?> 
+
+<?php if(isset($_SESSION['Error'])) { ?>
+<br/><br/>
+<div style="color:red;" class="student-titles">
+    <h5><?php echo $_SESSION['Error']; ?></h5>
+</div>
+<?php } unset($_SESSION['Error']); ?> 
+
+
+<?php $a=1; while($row_test = mysql_fetch_array($sql_test)) { ?>
+<?php if($a==1) { ?>
+<div style="margin-top: 20px;" id="Question_set_<?php echo $row_test['QuestionSetID']; ?>"  >
+    Question <label> <?php echo $a; ?> : <?php echo $row_test['Question']; ?> </label> <br/><br/>
+            Answers :  
+			
+			<!--option 1-->
+            <?php if($row_test['Answer01']) { ?>
+			<?php echo $row_test['Answer01'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_1" onclick="SaveAnswer('<?php echo $a; ?>','1','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer01'] ?>" /> <br/><br/>
+            <?php } ?>
+                     
+				<!--option 2-->
+                <?php if($row_test['Answer02']) { ?>	 
+					 <?php echo $row_test['Answer02'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_2" onclick="SaveAnswer('<?php echo $a; ?>','2','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer02'] ?>" /> <br/><br/>   
+                      <?php } ?>
+                      
+				<!--option 3-->
+                <?php if($row_test['Answer03']) { ?>	  
+					  <?php echo $row_test['Answer03'] ?>  <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_3" onclick="SaveAnswer('<?php echo $a; ?>','3','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer03'] ?>" /> <br/><br/>  
+                      <?php } ?>
+				<!--option 4-->
+                	<?php if($row_test['Answer04']) { ?>  
+					  <?php echo $row_test['Answer04'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_4" onclick="SaveAnswer('<?php echo $a; ?>','4','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer04'] ?>" /><br/><br/>
+                  <?php } ?>    
+                      
+                      </div>
+                      
+<img style="display:none;" id="right_img_<?php echo $a; ?>" src="<?php echo $RootPath; ?>images/right.png" height="100px;" width="100px;" />
+<img style="display:none;" id="wrong_img_<?php echo $a; ?>" src="<?php echo $RootPath; ?>images/wrong.png" height="100px;" width="100px;" />                       
+
+<?php } else { ?>
+
+<div style="margin-top: 20px; display: none; " id="Question_set_<?php echo $row_test['QuestionSetID']; ?>" >
+    Question <label> <?php echo $a; ?> : <?php echo $row_test['Question']; ?> </label> <br/><br/>
+            Answers :  
+			
+			<!--option 1-->
+            <?php if($row_test['Answer01']) { ?>
+			<?php echo $row_test['Answer01'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_1" onclick="SaveAnswer('<?php echo $a; ?>','1','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer01'] ?>" /> <br/><br/>
+            <?php } ?>
+                     
+				<!--option 2-->
+                <?php if($row_test['Answer02']) { ?>	 
+					 <?php echo $row_test['Answer02'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_2" onclick="SaveAnswer('<?php echo $a; ?>','2','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer02'] ?>" /> <br/><br/>   
+                      <?php } ?>
+                      
+				<!--option 3-->
+                <?php if($row_test['Answer03']) { ?>	  
+					  <?php echo $row_test['Answer03'] ?>  <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_3" onclick="SaveAnswer('<?php echo $a; ?>','3','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer03'] ?>" /> <br/><br/>  
+                      <?php } ?>
+				<!--option 4-->
+                	<?php if($row_test['Answer04']) { ?>  
+					  <?php echo $row_test['Answer04'] ?>   <input type="radio" name="answer_<?php echo $a; ?>" id="answer_<?php echo $a; ?>_4" onclick="SaveAnswer('<?php echo $a; ?>','4','<?php echo $row_test['QuestionSetID']; ?>');" value="<?php echo $row_test['Answer04'] ?>" /><br/><br/>
+                  <?php } ?>    
+                      
+                      </div>
+                      
+<img style="display:none;" id="right_img_<?php echo $a; ?>" src="<?php echo $RootPath; ?>images/right.png" height="100px;" width="100px;" />
+<img style="display:none;" id="wrong_img_<?php echo $a; ?>" src="<?php echo $RootPath; ?>images/wrong.png" height="100px;" width="100px;" />                       
+
+
+<?php } ?>
+    <?php $a++; } ?>
+
+
+<div  style="margin-top: 30px;"  class="buttons-box text-center">
+	Your Score :- <span id="total_score">00.00</span>%
+</div>
+<div  style="margin-top: 30px;"  class="buttons-box text-center">
+    
+ 
+    <input type="button" onclick="CompletedTest('<?php echo $TopicID; ?>','<?php echo $CourseID; ?>');" value="Submit" class="green-butt green-back" />
+    <input type="button" onclick="CancelTest('<?php echo $TopicID; ?>','<?php echo $CourseID; ?>');" class="green-butt" value="Cancel" />
+    <input type="button" onclick="RestartTest();" class="green-butt green-back" value="Restart Test" /></div>
+ 
+    
+    </div>
+    
+    
+
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<?php include('../../footer.php'); ?>
+
+<script type="text/javascript">
+function CancelTest(TopicID,CourseID){
+	window.location.href="<?php echo $RootPath; ?>pages/student/dashboard.php?CourseID="+CourseID+"&TopicID="+TopicID;	
+}
+</script>
+<script type="text/javascript">
+function CompletedTest(TopicID,CourseID){
+	
+	if($('#CoverPercentage').val() < 80) {
+	
+		alert('Please Score At Least 80%');
+	
+	} else {
+	
+		var action = "completed_test";
+		var NextTopicID = $('#NextTopicID').val();
+		$.ajax({
+			method:'post',
+			url:'<?php echo $RootPath; ?>action/student.php',
+			data:{TopicID:TopicID,CourseID:CourseID,action:action},
+			success: function(resp){
+				alert('Test Completed');
+				window.location.href="<?php echo $RootPath; ?>pages/student/dashboard.php?CourseID="+CourseID+"&TopicID="+NextTopicID;	
+			}
+		});
+	}
+}
+</script>
+<script type="text/javascript">
+function SaveAnswer(RowNumber,RowValue,QuestionSetID){
+	if(RowValue=='1') {
+		$('#answer_'+RowNumber+'_2').attr("disabled",true);
+		$('#answer_'+RowNumber+'_3').attr("disabled",true);
+		$('#answer_'+RowNumber+'_4').attr("disabled",true);
+		var useranswer = '1';
+	} else if(RowValue=='2') {
+		$('#answer_'+RowNumber+'_1').attr("disabled",true);
+		$('#answer_'+RowNumber+'_3').attr("disabled",true);
+		$('#answer_'+RowNumber+'_4').attr("disabled",true);
+		var useranswer = '2';
+	} else if(RowValue=='3') {
+		$('#answer_'+RowNumber+'_1').attr("disabled",true);
+		$('#answer_'+RowNumber+'_2').attr("disabled",true);
+		$('#answer_'+RowNumber+'_4').attr("disabled",true);
+		var useranswer = '3';
+	} else if(RowValue=='4') {
+		$('#answer_'+RowNumber+'_1').attr("disabled",true);
+		$('#answer_'+RowNumber+'_2').attr("disabled",true);
+		$('#answer_'+RowNumber+'_3').attr("disabled",true);
+		var useranswer = '4';
+	}
+	var action = 'save_user_answer';
+        
+	$.ajax({
+		method:'post',
+		url:'<?php echo $RootPath; ?>action/student.php',
+		data:{useranswer:useranswer,QuestionSetID:QuestionSetID,action:action},
+		success: function(resp){
+			//alert(resp);
+			if(resp=='0'){
+				$('#wrong_img_'+RowNumber).show();
+				$('#right_img_'+RowNumber).hide();
+			} else if(resp=='1') {
+				$('#right_img_'+RowNumber).show();
+				$('#wrong_img_'+RowNumber).hide();
+				var PercentagePerQuestion = parseFloat($('#PercentagePerQuestion').val());
+				var CoverPercentage = $('#CoverPercentage').val();
+				var NewPercentage = parseFloat(CoverPercentage) + parseFloat(PercentagePerQuestion);
+				var CoverPercentage = $('#CoverPercentage').val(NewPercentage);
+				$('#total_score').text(NewPercentage);
+                                var QuestionNo = parseInt($('#QuestionNo').val());
+                                var no = '1';
+                                var NewQuestionNo = parseInt(QuestionNo) + parseInt(no);
+                                var QuestionNo1 = $('#QuestionNo').val(NewQuestionNo);
+                                $('#Question_set_'+QuestionNo1).show();
+			}
+		}
+	});
+	
+}
+</script>
+<script type="text/javascript">
+function RestartTest(){
+	if(confirm("Are You Sure Want To Restart App?")){
+		window.location.reload();
+	} else  {
+		
+	}
+}
+</script>

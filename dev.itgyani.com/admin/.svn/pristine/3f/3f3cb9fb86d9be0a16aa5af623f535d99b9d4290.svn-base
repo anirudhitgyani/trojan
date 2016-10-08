@@ -1,0 +1,7 @@
+
+<?php
+
+include_once('../config/ITGStandardPHPPageDBConfig.php'); 
+include_once('../config/ez_sql_core.php'); 
+include_once('../config/ez_sql_mysql.php');
+require('../Classes/PHPExcel/IOFactory.php');

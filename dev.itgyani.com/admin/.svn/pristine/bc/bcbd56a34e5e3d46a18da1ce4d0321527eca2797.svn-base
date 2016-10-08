@@ -1,0 +1,527 @@
+﻿/*Default Data Entry Screen Behaviour*/
+#BrizBVKStandardFrmDataEntry {  
+                clear:both;
+                /* 
+                -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);   
+                -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);  
+                box-shadow: 10px 5px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/  
+                /*
+                border-color:chocolate;
+                border-width:2px;
+                border-style:double;
+                border-top-width:3px;
+                border-top-style:solid;
+                border-left-style:solid;
+                border-left-width:3px;
+                    border-bottom-left-radius: 2em;
+                border-top-right-radius: 2em;
+                */
+                border-top: 3px solid #568EB6;
+                border-bottom: 5px solid #568EB6;
+                border-left: 1px solid #568EB6;
+                border-right: 1px solid #568EB6;
+                background: #f2f2f2;
+                margin: 0;
+                padding:0px 0px 0px 0px;
+                overflow-y:auto;
+
+                
+        }
+/*Default Contact Block Behaviour*/
+#BrizBVKStandardLogin label, #submit {
+    position: absolute;
+    width: 33px;
+    height: 34px;
+    background: #E5E5E5;
+    margin: 0;
+    text-align: center;
+    line-height: 2.2em;
+    color: #666;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    font-size: 1.2em;
+}
+/*Default Login Page Button Behivour*/
+.BrizBVKStandardBtnMenu {
+    background: #fe580a !important;
+    color: #fff !important;
+    border-radius: 20px;
+    padding: 5px;
+    height: auto !important;
+    line-height: 1px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+/*Default Login Page Button Behivour*/
+.BrizBVKStandardBtnMenuHover {
+    background: blue !important;
+    color: #fff !important;
+    border-radius: 20px;
+    padding: 5px;
+    height: auto !important;
+    line-height: 1px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+/*Default Data Entry Screen Behaviour*/
+.BrizBVKStandardFldRequired {
+    color:red;
+    background-color:lightcyan;
+    border-style:solid;
+    border-width:1px;
+
+}
+/*Bootbox Dialog Class For Required*/
+.BrizBVKStandardDlgRequired {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(255, 0, 220);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKBlankNotAllowed.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Content Class For Required*/
+.BrizBVKStandardDlgRequiredContent  {
+    border-radius:0px 0px 0px 0px;
+    border-width:2px;
+    border-style:double;
+    border-color:red;
+    padding:8px;
+    background-color:oldlace;
+}
+.BrizBVKStandardDlgLoginFailed {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(255, 0, 220);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKLoginFailedScree.jpg');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Close Button For All*/
+.BrizBVKStandardDlgCloseButton  {
+    background-image:url('../Images/BrizBVKClsoeDialog.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    height:50px;
+    width:50px;
+    background-color:transparent;
+    border-width:0px;
+    margin-top:-36px;
+    margin-right: -38px;
+}
+/*Bootbox Dialog Required Help*/
+.BrizBVKStandardDlgRequiredHelpRow  {
+    margin-left:5%;
+    color:blueviolet;
+    font-size:small;
+    font-style:italic;
+    font-weight:bold;
+    border-bottom-color:lightgray;
+    border-bottom-style:solid;
+    border-bottom-width:.5px;
+    
+}
+.BrizBVKStandardDlgRequiredHelpRow::before {
+    content:"\f0a9";
+    font-family: FontAwesome;
+    display:inline-block;
+    color:brown;
+    margin-right:2%;
+}
+/*Bootbox Dialog Class For Invalid*/
+.BrizBVKStandardDlgInvalid {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(255, 0, 220);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKInvalidDataEntry.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Class For Already Exists*/
+.BrizBVKStandardDlgAlreadyExists {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(255, 0, 220);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKAlreadyExists.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Class For Transaction Successful*/
+.BrizBVKStandardDlgSuccess {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(182, 255, 0);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKTransactionSuccessful.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+.BrizBVKStandardDlgMaintenance{
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(182, 255, 0);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKUnderMaintenance.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Class For Transaction Failed*/
+.BrizBVKStandardDlgSuccess {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(182, 255, 0);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKTransactionSuccessful.png');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+/*Bootbox Dialog Class For Registeration*/
+.BrizBVKStandardDlgRegisteration {
+    border-style:solid;
+    border-top-width:8px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-bottom-width:1px;
+    border-color:rgb(182, 255, 0);    
+    background-color:gray;
+    background-image:url('../Images/BrizBVKWelcome.jpg');
+    background-repeat:no-repeat;
+    background-position:center right;
+}
+
+/*Bootbox Dialog Settings*/
+.BrizBVKStandardDlgSettings > .modal-dialog {
+    width:70% !important;
+    top:.5% !important;
+    outline: none;
+    position: absolute;
+    margin-top: 0;
+    top: .5%;
+    overflow: visible; 
+    z-index:999;
+}
+/*For Standard CRM Slider Images*/
+.BrizBVKStandardCRMSlider {
+    width:100%;
+    height:485px;
+    margin:0px 2px 0px 2px;
+}
+/*Bootbox Dialog All Right's Reserved*/
+.BrizBVKStandardDlgAllRightReserved  {
+    color:red;
+}
+/*Bootbox Common Class For Root Div*/
+.BrizBVKStandardDivRoot {
+    margin-top: 7%; 
+    clear: both;
+}
+/*Menu Bar Settings*/
+.cd-dropdown-trigger {
+    background-color: #ffd800;
+}
+header {
+    height: 100px;
+    background: Transparent;
+}
+.has-children {
+    padding:0px;
+    margin:0px;
+}
+/*Stick Menu To Top*/
+.header {
+    position: relative;
+    background-color: orange;
+    background-color: lightgoldenrodyellow;
+    background-image: none;
+    padding: 8px 0px 0px 0px;
+    transition: all 300ms;
+    width: 100%;
+    z-index:9999;
+    border-bottom-style:solid;
+    border-bottom-color:chocolate;
+    border-bottom-width:4px;
+    -webkit-box-shadow: 0 0 10px rgb(0,0,0);
+-moz-box-shadow: 0 0 10px rgb(0,0,0);
+}
+/*Default Container settings*/
+.BrizBVKDefaultContainer {
+    padding:10px 0px 0px 0px;
+    margin:0px;
+    min-height:80.5%;
+    position:absolute;
+    max-width:60%;
+    min-width: 94%;
+    border-style:solid;    
+    margin:3px 0px 0px 0px;
+}
+.header.is-stuck {
+	position: fixed;
+	background-color: #fff;
+	padding: 0px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/*Font Awasome Color Settings*/
+.fa-life-ring {
+    color:chocolate;
+    font-size:large;
+}
+/*Radial Menu From : http://codepen.io/suez/pen/vAais*/
+        *, *:before, *:after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        .absolute-center, .menu, .menu .btn .fa, .menu .btn.trigger .line {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translateX(-50%) translateY(-50%);
+                  transform: translateX(-50%) translateY(-50%);
+        }
+
+        .menu {
+          width: 5em;
+          height: 5em;
+        }
+        .menu .btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.15);
+          opacity: 0;
+          z-index: -10;
+          cursor: pointer;
+          -webkit-transition: opacity 1s, z-index 0.3s, -webkit-transform 1s;
+          transition: opacity 1s, z-index 0.3s, -webkit-transform 1s;
+          transition: opacity 1s, z-index 0.3s, transform 1s;
+          transition: opacity 1s, z-index 0.3s, transform 1s, -webkit-transform 1s;
+          -webkit-transform: translateX(0);
+                  transform: translateX(0);
+        }
+        .menu .btn .fa {
+          font-size: 3em;
+          -webkit-transition: color 0.3s;
+          transition: color 0.3s;
+        }
+        .menu .btn:hover .fa {
+          color: rgba(255, 255, 255, 0.7);
+        }
+        .menu .btn.trigger {
+          opacity: 1;
+          z-index: 100;
+          cursor: pointer;
+          -webkit-transition: -webkit-transform 0.3s;
+          transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+          transition: transform 0.3s, -webkit-transform 0.3s;
+        }
+        .menu .btn.trigger:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2);
+        }
+        .menu .btn.trigger:hover .line {
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+        .menu .btn.trigger:hover .line:before, .menu .btn.trigger:hover .line:after {
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+        .menu .btn.trigger .line {
+          width: 60%;
+          height: 6px;
+          background: #000;
+          border-radius: 6px;
+          -webkit-transition: background-color 0.3s, height 0.3s, top 0.3s;
+          transition: background-color 0.3s, height 0.3s, top 0.3s;
+        }
+        .menu .btn.trigger .line:before, .menu .btn.trigger .line:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background: #000;
+          border-radius: 6px;
+          -webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
+          transition: background-color 0.3s, -webkit-transform 0.3s;
+          transition: background-color 0.3s, transform 0.3s;
+          transition: background-color 0.3s, transform 0.3s, -webkit-transform 0.3s;
+        }
+        .menu .btn.trigger .line:before {
+          top: -12px;
+          -webkit-transform-origin: 15% 100%;
+                  transform-origin: 15% 100%;
+        }
+        .menu .btn.trigger .line:after {
+          top: 12px;
+          -webkit-transform-origin: 25% 30%;
+                  transform-origin: 25% 30%;
+        }
+        .menu .rotater {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          -webkit-transform-origin: 50% 50%;
+                  transform-origin: 50% 50%;
+        }
+        .menu.active .btn-icon {
+          opacity: 1;
+          z-index: 50;
+        }
+        .menu.active .trigger .line {
+          height: 0px;
+          top: 45%;
+        }
+        .menu.active .trigger .line:before {
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+          width: 110%;
+        }
+        .menu.active .trigger .line:after {
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          width: 110%;
+        }
+
+        .rotater:nth-child(1) {
+          -webkit-transform: rotate(-22.5deg);
+                  transform: rotate(-22.5deg);
+        }
+
+        .menu.active .rotater:nth-child(1) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(22.5deg);
+                  transform: translateY(-10em) rotate(22.5deg);
+        }
+
+        .rotater:nth-child(2) {
+          -webkit-transform: rotate(22.5deg);
+                  transform: rotate(22.5deg);
+        }
+
+        .menu.active .rotater:nth-child(2) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-22.5deg);
+                  transform: translateY(-10em) rotate(-22.5deg);
+        }
+
+        .rotater:nth-child(3) {
+          -webkit-transform: rotate(67.5deg);
+                  transform: rotate(67.5deg);
+        }
+
+        .menu.active .rotater:nth-child(3) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-67.5deg);
+                  transform: translateY(-10em) rotate(-67.5deg);
+        }
+
+        .rotater:nth-child(4) {
+          -webkit-transform: rotate(112.5deg);
+                  transform: rotate(112.5deg);
+        }
+
+        .menu.active .rotater:nth-child(4) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-112.5deg);
+                  transform: translateY(-10em) rotate(-112.5deg);
+        }
+
+        .rotater:nth-child(5) {
+          -webkit-transform: rotate(157.5deg);
+                  transform: rotate(157.5deg);
+        }
+
+        .menu.active .rotater:nth-child(5) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-157.5deg);
+                  transform: translateY(-10em) rotate(-157.5deg);
+        }
+
+        .rotater:nth-child(6) {
+          -webkit-transform: rotate(202.5deg);
+                  transform: rotate(202.5deg);
+        }
+
+        .menu.active .rotater:nth-child(6) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-202.5deg);
+                  transform: translateY(-10em) rotate(-202.5deg);
+        }
+
+        .rotater:nth-child(7) {
+          -webkit-transform: rotate(247.5deg);
+                  transform: rotate(247.5deg);
+        }
+
+        .menu.active .rotater:nth-child(7) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-247.5deg);
+                  transform: translateY(-10em) rotate(-247.5deg);
+        }
+
+        .rotater:nth-child(8) {
+          -webkit-transform: rotate(292.5deg);
+                  transform: rotate(292.5deg);
+        }
+
+        .menu.active .rotater:nth-child(8) .btn-icon {
+          -webkit-transform: translateY(-10em) rotate(-292.5deg);
+                  transform: translateY(-10em) rotate(-292.5deg);
+        }
+/*Radial Menu Over */
+/* Progress Bar : http://talkerscode.com/webtricks/display-progress-bar-while-page-loads-using-jquery.php*/
+.progress 
+{
+ position: fixed;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ z-index: 9999;
+ background-color: #F2F2F2;
+}
+.bar 
+{ 
+  background-color: red; 
+  width:0%; 
+  height:7px; 
+  border-radius: 3px; 
+}
+.percent 
+{ 
+  position:absolute; 
+  display:inline-block; 
+  top:3px; 
+  left:48%; 
+}
+.progress {
+    background-color:transparent;
+}

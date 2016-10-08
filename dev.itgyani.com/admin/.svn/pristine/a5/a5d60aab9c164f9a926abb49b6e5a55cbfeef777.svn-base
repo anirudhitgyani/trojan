@@ -1,0 +1,381 @@
+<?php
+include_once('ITGHeader.php');
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+?>
+<style>
+
+      .filepicker-preview .thumbnail {
+        max-width: 100px;
+        display: inline-block;
+      }
+      
+      .filepicker-preview .thumbnail img {
+        max-width: 100%;
+      }
+      
+    </style>
+    <link rel="stylesheet" type="text/css" href="CSS/BrizBVKStandardCSSCore.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/BrizBVKStandardCSSTags.css" />
+<div class="row">
+    <div id="ITGTrvCourse" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+        
+    </div>    
+    
+    
+    <div id="ITGDtlCourse" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 pull-right"  >
+        <div style="margin: 0px 0px 5px 0px; ">
+            <span id="ITGBadCurrent" class="badge" style="text-align:center;font-size:1em;font-weight:bold;margin:2px;color:chocolate; display:none;  "></span>
+            <button id="ITGBtnAddCourse" class="btn btn-primary" > Add Course</button>
+            <button id="ITGBtnURLImport" class="btn btn-warning" style="display: none;" > Topics</button>
+            <button id="ITGBtnFAQImport" class="btn btn-warning" style="display: none;"> FAQ's</button>
+            <button id="ITGBtnQuestionSet" class="btn btn-danger" style="display: none;"> Question Set</button>
+            
+            <button id="ITGBtnAdjust" class="btn btn-default pull-right" > <span id="ITGSpnAdjust" style="font-weight:normal;font-family: sans-serif;letter-spacing: 2px;    " class="label label-danger"> Maximize </span></button>
+        </div>
+            
+            <div id="BrizBVKStandardFrmDataEntry"  style="min-height:80%; ">
+                <div class="row" id="ITGDivCourseName" style="min-height:78%; border-bottom-color:chocolate;border-bottom-style:solid;border-bottom-width: 2px;display:none;    ">
+                    <div class="row" style="padding:2% 0% 1% 0%;font-size:2em;font-weight:bold;   ">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:1%; "  >
+                            <span class="label label-success" style="padding:5px; ">Course Name</span>  
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
+                            <input id="ITGTxtCourseName"  class="form-control input-sm"  placeholder="Enter Course Name" type="text" style="min-width:90%; ">
+                        </div>
+                    </div>
+                    <div class="row" style="padding:.5% 0% 1% 0%;font-size:2em;font-weight:bold;   ">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:2%; " >
+                            <span class="label label-success" style="padding:5px; ">Course Description</span>  
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
+                            
+                            <textarea  class="form-control" id="ITGTxtCourseDesc" maxlength="500" rows="4" placeholder="Enter Course Description ..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="padding:0% 0% 1% 0%;font-size:2em;font-weight:bold;   ">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:2%; " >
+                            <span class="label label-success" style="padding:5px; ">Active</span>  
+                        </div>
+                        <div class="col-xs-12 col-lg-offset-1 col-sm-12 col-md-5 col-lg-5" >                            
+                            <label ><input id="ITGChkCourseActive" type="checkbox" class="lbl label-success" style="height:20px;width: 20px; " value=""></label>
+                        </div>
+                    </div>
+                    <div class="row" style="padding:.5% 0% 1% 0%;font-size:2em;font-weight:bold;   ">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:2%; " >
+                            <span class="label label-success" style="padding:5px; ">Course Image</span>  
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >                            
+                            <input id="filepicker" data-label="Upload" class="filepicker-bootstrap" type="file" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding:.5% 0% 1% 0%;font-size:2em;font-weight:bold;   ">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:2%; " >
+                            
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >                            
+                            <button id='ITGBtnSaveCourse' class="btn btn-primary" > Save </button>
+                            <button id='ITGBtnClearCourse' class="btn btn-danger" > Cancel </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="ITGDivURLImport" style="min-height:80%; border-bottom-color:chocolate;border-bottom-style:solid;border-bottom-width: 2px;display:none;   ">
+                     
+                    <div class="panel-group" id="ITGAccURLDocIMP">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGAccURLDocIMP" href="#ITGColTopicList">
+                              Topic List</a>
+                            </h4>
+                              
+                          </div>
+                          <div id="ITGColTopicList" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                  
+                                    <table id="BrizBTblTopicDataGrid" class="display nowrap" style="max-height: 50px; min-height: 30%; overflow: auto; position: relative; " cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  
+                                                  <th >Sr No</th>
+                                                  <th >Topic Name</th>
+                                                  <th >Topic Desc</th>
+                                                  <th >URL01</th>
+                                                  <th >URL 01 Locked</th>
+                                                  <th >URL02</th>
+                                                  <th >URL 02 Locked</th>
+                                                  <th >URL03</th>
+                                                  <th >URL 03 Locked</th>
+                                                  <th >URL04</th>
+                                                  <th >URL 04 Locked</th>
+                                                  <th >Doc01</th>
+                                                  <th >Doc 01 Locked</th>
+                                                  <th >Doc02</th>
+                                                  <th >Doc 02 Locked</th>
+                                                  <th >Doc03</th>
+                                                  <th >Doc 03 Locked</th>
+                                                  <th >Doc04</th>
+                                                  <th >Doc 04 Locked</th>
+                                                  <th >Active</th>
+                                                  <th >Deleted</th>
+                                                  <th >Change Log</th>
+                                                </tr>
+                
+                                            </thead>
+                                        
+                                    </table>
+                                  
+                              </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGAccURLDocIMP" href="#ITGColTopicImport">
+                              Import</a>
+                            </h4>
+                          </div>
+                          <div id="ITGColTopicImport" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <div class="row" >
+                                      <div class="col-xs-4">
+                                        <input type="file" name="file_upload" id="ITGBtnOpenFile" />
+                                      </div>
+                                      <div class="col-xs-8">
+                                          <button id="ITGyaniBtnReadURLDocFiles" class="btn btn-primary" > Read </button>
+                                          <select id="ITGyaniSelReadURLDocFiles" class="btn btn-primary" style="display:inline-block;min-width:150px;  " ></select>
+                                          <button id="ITGyaniBtnShowURLDocFiles" class="btn btn-primary" style="display: none;" > Show </button>
+                                          <button id="ITGyaniBtnUploadURLDocFiles" class="btn btn-danger" style="display: none;" > Upload </button>
+                                      </div>
+                                  </div>
+                                  <div  class="row" style="max-width:98%;max-height:70%;  overflow:scroll;  " >
+                                      <table class="table" id="ITGTblTopicImport" style="max-width:88%; ">
+                                              <thead>
+                                                  <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  <th nowrap>Sr No</th>
+                                                  <th nowrap>Topic Name</th>
+                                                  <th nowrap>Topic Desc</th>
+                                                  <th nowrap>URL01</th>
+                                                  <th nowrap>URL 01 Locked</th>
+                                                  <th nowrap>URL02</th>
+                                                  <th nowrap>URL 02 Locked</th>
+                                                  <th nowrap>URL03</th>
+                                                  <th nowrap>URL 03 Locked</th>
+                                                  <th nowrap>URL04</th>
+                                                  <th nowrap>URL 04 Locked</th>
+                                                  <th nowrap>Doc01</th>
+                                                  <th nowrap>Doc 01 Locked</th>
+                                                  <th nowrap>Doc02</th>
+                                                  <th nowrap>Doc 02 Locked</th>
+                                                  <th nowrap>Doc03</th>
+                                                  <th nowrap>Doc 03 Locked</th>
+                                                  <th nowrap>Doc04</th>
+                                                  <th nowrap>Doc 04 Locked</th>
+                                                  <th nowrap>Active</th>
+                                                  <th nowrap>Deleted</th>
+                                                  <th nowrap>Change Log</th>
+                                                </tr>
+                                              </thead>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+  
+                    </div>
+                </div>
+                
+                <div class="row" id="ITGDivFAQImport" style="min-height:80%; border-bottom-color:chocolate;border-bottom-style:solid;border-bottom-width: 2px;display:none;   ">
+                     
+                    <div class="panel-group" id="ITGAccFAQIMP">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGDivFAQImport" href="#ITGColFAQList">
+                              FAQ List</a>
+                            </h4>
+                              
+                          </div>
+                          <div id="ITGColFAQList" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                  
+                                    <table id="BrizBTblFAQDataGrid" class="display nowrap" style="max-height: 50px; min-height: 30%; overflow: auto; position: relative; " cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  
+                                                  <th nowrap>Sr. No.</th>
+                                                  <th nowrap>FAQ</th>
+                                                  <th nowrap>Answer</th>                                                  
+                                                  <th nowrap>Active</th> 
+                                                  <th nowrap>Deleted</th> 
+                                                  <th nowrap>Change Log</th>
+                                                </tr>
+                
+                                            </thead>
+                                        
+                                    </table>
+                                  
+                              </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGDivFAQImport" href="#ITGColFAQImport">
+                              Import</a>
+                            </h4>
+                          </div>
+                          <div id="ITGColFAQImport" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <div class="row" >
+                                      <div class="col-xs-4">
+                                        <input type="file" name="file_upload" id="ITGBtnOpenFAQFile" />
+                                      </div>
+                                      <div class="col-xs-8">
+                                          <button id="ITGyaniBtnReadFAQFiles" class="btn btn-primary" > Read </button>
+                                          <select id="ITGyaniSelReadFAQDocFiles" class="btn btn-primary" style="display:inline-block;min-width:150px;  " ></select>
+                                          <button id="ITGyaniBtnShowFAQDocFiles" class="btn btn-primary" style="display: none;" > Show </button>
+                                          <button id="ITGyaniBtnUploadFAQDocFiles" class="btn btn-danger" style="display: none;" > Upload </button>
+                                      </div>
+                                  </div>
+                                  <div  class="row" style="max-width:98%;max-height:70%;  overflow:scroll;  " >
+                                      <table class="table" id="ITGTblFAQImport" style="max-width:88%; ">
+                                              <thead>
+                                                  <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  <th nowrap>Sr. No.</th>
+                                                  <th nowrap>FAQ</th>
+                                                  <th nowrap>Answer</th> 
+                                                  <th nowrap>Active</th> 
+                                                  <th nowrap>Deleted</th> 
+                                                  <th nowrap>Change Log</th>
+                                                </tr>
+                                                </tr>
+                                              </thead>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+  
+                    </div>
+                </div>
+                <div class="row" id="ITGDivQSetImport" style="min-height:80%; border-bottom-color:chocolate;border-bottom-style:solid;border-bottom-width: 2px;display:none;   ">
+                     
+                    <div class="panel-group" id="ITGAccQSetIMP">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGDivQSetImport" href="#ITGColQSetList">
+                              Question Set List</a>
+                            </h4>
+                              
+                          </div>
+                          <div id="ITGColQSetList" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                  
+                                    <table id="BrizBTblQSetDataGrid" class="display nowrap" style="max-height: 50px; min-height: 30%; overflow: auto; position: relative; " cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  
+                                                  <th >Topic Name</th>
+                                                  <th >Topic ID</th>
+                                                  <th >Q. Sr. No.</th>                                                  
+                                                  <th >Question</th>
+                                                  <th>Answer01</th>
+                                                  <th>Answer01Correct[Yes/No]</th>
+                                                  <th >Answer02</th>
+                                                  <th>Answer02Correct[Yes/No]</th>
+                                                  <th >Answer03</th>
+                                                  <th>Answer03Correct[Yes/No]</th>
+                                                  <th >Answer04</th>
+                                                  <th>Answer04Correct[Yes/No]</th>
+                                                  <th>Answer Time in Sec</th>
+                                                  <th>Control Type[Option Or Checkbox]</th>
+                                                  <th>Change Log</th>
+                                                  <th>Active</th>
+                                                  <th>Deleted</th>                                                  
+                                                </tr>
+                
+                                            </thead>
+                                        
+                                    </table>
+                                  
+                              </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#ITGDivQSetImport" href="#ITGColQSetImport">
+                              Import</a>
+                            </h4>
+                          </div>
+                          <div id="ITGColQSetImport" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <div class="row" >
+                                      <div class="col-xs-4">
+                                        <input type="file" name="file_upload" id="ITGBtnOpenQSetFile" />
+                                      </div>
+                                      <div class="col-xs-8">
+                                          <button id="ITGyaniBtnReadQSetFiles" class="btn btn-primary" > Read </button>
+                                          <select id="ITGyaniSelReadQSetDocFiles" class="btn btn-primary" style="display:inline-block;min-width:150px;  " ></select>
+                                          <button id="ITGyaniBtnShowQsetDocFiles" class="btn btn-primary" style="display: none;" > Show </button>
+                                          <button id="ITGyaniBtnUploadQSetDocFiles" class="btn btn-danger" style="display: none;" > Upload </button>
+                                      </div>
+                                  </div>
+                                  <div  class="row" style="max-width:98%;max-height:70%;  overflow:scroll;  " >
+                                      <table class="table" id="ITGTblQSetImport" style="max-width:88%; ">
+                                              <thead>
+                                                  <tr style="font-weight:bold;font-size:1.2em;color: #3e1a98;font-family:monospace;border-bottom-style:solid;border-bottom-color:chocolate;border-bottom-width:5px;       ">
+                                                  <th >Topic ID</th>
+                                                  <th >Question ID</th>
+                                                  <th >Question</th>                                                  
+                                                  <th >Answer01</th>
+                                                  <th>Answer01Correct[Yes/No]</th>
+                                                  <th >Answer02</th>
+                                                  <th>Answer02Correct[Yes/No]</th>
+                                                  <th >Answer03</th>
+                                                  <th>Answer03Correct[Yes/No]</th>
+                                                  <th >Answer04</th>
+                                                  <th>Answer04Correct[Yes/No]</th>
+                                                  <th>Answer Time in Sec</th>
+                                                  <th>Control Type[Option Or Checkbox]</th>
+                                                  <th>Active</th>
+                                                  <th>Deleted</th>
+                                                  <th>Change Log</th>
+                                                </tr>
+                                                </tr>
+                                              </thead>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="clearfix" ></div>
+</div>
+<script type="text/javascript" src="CoreJS.js"></script>
+<link rel="stylesheet" type="text/css" href="CoreCSS.css" />
+<script src="JsAjax/ITGStandardJSPageCourse.js"></script>
+<style type="text/css">
+    table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+        background-color: transparent;
+        height: 40px;
+    }
+    .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td {
+        vertical-align: middle;
+        height: 40px;
+    }
+    th, td {
+    white-space: nowrap;
+}
+</style>
